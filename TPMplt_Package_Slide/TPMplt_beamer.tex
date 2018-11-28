@@ -54,7 +54,7 @@
 	\item Installation: 
 	\begin{enumerate}
 		\item From CRAN (stable): \code{install.packages("TPMplt")}
-		\item From Git Repo (Developement): \\
+		\item From Git Repo (developement): \\
 		\qquad \code{if(!"devtools" \%in\% installed.packages())\\ \qquad \qquad install.packages("devtools")}\\
 		\qquad \code{devtools::install\_github("CubicZebra/TPMplt")}
 	\end{enumerate}
@@ -238,7 +238,7 @@
 \subsection{Insufficiencies \& Solutions}
 \begin{frame}{Insufficiencies}
 \begin{enumerate}
-	\item $\because m \in (0, 1) \therefore \eta = 2m/(1+m) \in (0, 1)$\\ However, some predicted $\eta$ values are still out of range
+	\item $\because m \in (0, 1] \therefore \eta = 2m/(1+m) \in (0, 1]$\\ However, some predicted $\eta$ values are still out of range
 	\singlespacing
 	\item Result of material constant A looks strange, since it's too small in magnitude
 	\singlespacing
@@ -248,7 +248,7 @@
 
 \begin{frame}{Corresponding Solutions}
 \begin{enumerate}
-	\item Truncate the $\eta$ using estimator $\tilde{\eta} = (\eta - \eta_{min})/(\eta_{max} - \eta_{min})$
+	\item Rescaling the $\eta$ using $\tilde{\eta} = (\eta - \eta_{min})/(\eta_{max} - \eta_{min})$
 	\singlespacing
 	\item Modify related calculations in model-buiding function
 	\singlespacing
@@ -263,10 +263,34 @@
 	\singlespacing
 	\begin{enumerate}
 		\item \code{DMMprocess()}
-		\item \code{SVRModel()}
-		\item \code{TPM2dplt()}
+		\singlespacing
+		\item \code{SVRModel()} (fixed in Dev Version)
+		\singlespacing
+		\item \code{TPM2dplt()}  (fixed in Dev Version)
 	\end{enumerate}
 \end{itemize}
+\end{frame}
+
+\begin{frame}[t]{Preview for Next Version}
+	\begin{minipage}[t]{1\textwidth}
+        \vspace{0pt}
+        \begin{itemize}
+            \item {\small Rescaling algorithm for the predicted $\eta$ values in \code{SVRModel()}:}\\
+            \singlespacing
+            \includegraphics[scale=0.38]{Fig13.png}
+        \end{itemize}
+    \end{minipage}%
+\end{frame}
+
+\begin{frame}[t]{Preview for Next Version}
+	\begin{minipage}[t]{1\textwidth}
+        \vspace{0pt}
+        \begin{itemize}
+            \item {\small New \code{TPM2dplt()} using a) the rainbow color control; b) labels for $\eta$ contours.}\\
+            \singlespacing
+            \includegraphics[scale=0.38]{Fig14.png}
+        \end{itemize}
+    \end{minipage}%
 \end{frame}
 
 %\begin{frame}{Fig Insert Template}
