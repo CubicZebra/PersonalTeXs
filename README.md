@@ -1,7 +1,7 @@
-# PersonalTeXs
+# Nothing important
 
 Repos for personal TeXs scripts
 
-Author: ZHANG Chen
+Author: Chen Zhang
 
-Main: 447974102@qq.com
+Main: chen.zhang_06sept@foxmail.com
